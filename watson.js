@@ -4,7 +4,7 @@ const { IamAuthenticator } = require('ibm-watson/auth');
 const assistant = new AssistantV2({
   version: '2020-04-01',
   authenticator: new IamAuthenticator({
-    apikey: 'lN4kVFilT6blmprBl-TRc5vC9ET2QWhXQUqcakfkK5NA',
+    apikey: '{apikey}',
   }),
   url: 'https://api.us-south.assistant.watson.cloud.ibm.com',
 });
@@ -12,13 +12,13 @@ const assistant = new AssistantV2({
 
 function crearSession() {
   return assistant.createSession({
-    assistantId: '5637685d-92d2-426d-ab00-9e833070760d'
+    assistantId: '{assistantId}',
   })
 }
 
 function deleteSession(id_session) {
   return assistant.deleteSession({
-    assistantId: '5637685d-92d2-426d-ab00-9e833070760d',
+    assistantId: '{assistantId}',
     sessionId: id_session
   })
 }
@@ -26,7 +26,7 @@ function deleteSession(id_session) {
 
 function sendMessage(input, id_session){
   return assistant.message({
-    assistantId: '5637685d-92d2-426d-ab00-9e833070760d',
+    assistantId: '{assistantId}',
     sessionId: id_session,
     input: {
       'message_type': 'text',
